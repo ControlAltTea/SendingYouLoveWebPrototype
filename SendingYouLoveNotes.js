@@ -16,6 +16,35 @@ users =
                 relationshipStart: Date // yearly anniversary, format is relationshipStart: "2022-08-07T08:19:55.849Z", mongoDB data (BSON) type
             }
         },
+        favorites: {
+            favoriteColor: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+                icon: null // Use a color picker to allow the user to pick the precise color
+                // display color in a small square icon with slightly rounded corners
+            },
+            favoriteMeal: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+                icon: null // a dropdown menu of emojis with generic categories
+            },
+            favoriteTreat: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+                icon: null // a dropdown menu of emojis with generic categories
+            },
+            favoriteMovie: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+            },
+            favoriteShow: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+            },
+            favoriteHobby: {
+                applicable: true, // similar to "show", a checkbox to enable or disable at the user's discretion
+                name: " ",
+            },
         // tell your partner about your day
         dayRating : {
             date: rating, // timestamp : (1-5), timestamp is to track the day
@@ -135,15 +164,32 @@ users =
                 // can we have a Zoom date? Phone date?
                 // Tell me about your day?
             }
-        },
-        desiredDestinations : {
-                greece : null
-        },
-        dateIdeas : {
-            dinner: null
         }
-    }
-]
+    }]
+dateIdeas: {
+    dinner: null
+}
+
+// Date night
+    // Not included in MVP
+    // A list of locations to meet
+        // Includes:
+            // Location
+            // Date
+            // Time
+            // 3 activities to do together (user can generate more if need be, 3 is the minimum to enter a desired destination entry)
+
+// Desired Destinations
+    // Not included in MVP
+    // A list of locations to meet
+        // Includes:
+            // Location
+            // Date
+            // Time
+            // 3 activities to do together (user can generate more if need be, 3 is the minimum to enter a desired destination entry)
+
+// User Script - think, feel, and do (What are they thinking, how will they feel, and what will they do?)
+    // Walk through the users' actions and how app will play through that scenario
 
 // MVP - minimal viable product
     // what features are MVP
@@ -160,12 +206,7 @@ users =
 // React? React native?
     // Managing state (https://www.youtube.com/watch?v=2DV-bONIPqQ)
 
-// User Script - think, feel, and do (What are they thinking, how will they feel, and what will they do?)
-    // Walk through the users' actions and how app will play through that scenario
-
-    // Quality time
-        // User1 can send their partner
-    
+// Haptic feedback
     // Different vibrations for different actions?
         // holding hands is similar to a faster heartrate
         // hugging is similar to a deep breath
