@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const exphs = require("express-handlebars");
 const methodOverride = require("method-override");
-const passport = require("passport");
+// const passport = require("passport");
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
 const connectDB = require("./config/db");
@@ -13,7 +13,7 @@ const connectDB = require("./config/db");
 dotenv.config({ path: './config/config.env' });
 
 // Passport config
-require('./config/passport')(passport)
+// require('./config/passport')(passport)
 
 // calls the connectDB function, located on the db.js
 connectDB();
@@ -39,7 +39,6 @@ app.engine(
     })
 );
 
-
 app.set("view engine", ".hbs");
 
 // checking if the user is in the database
@@ -53,8 +52,8 @@ app.use(session({
     })
 }))
 
-app.use(passport.initialize());
-app.use((passport.session()));
+// app.use(passport.initialize());
+// app.use((passport.session()));
 
 // set global var
 app.use(function (req, res, next) {
@@ -66,7 +65,7 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')))
 
 // ROUTES
-app.use("/", require("./routes/index"));
+// app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 5000;
 
