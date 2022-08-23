@@ -165,11 +165,8 @@ users =
                 // Tell me about your day?
             }
         }
-    }]
-dateIdeas: {
-    dinner: null
-}
-
+        }]
+    
 // Date night
     // Not included in MVP
     // A list of locations to meet
