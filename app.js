@@ -56,16 +56,16 @@ app.use(session({
 // app.use((passport.session()));
 
 // set global var
-app.use(function (req, res, next) {
-    res.locals.user = req.user || null;
-    next();
-})
+// app.use(function (req, res, next) {
+//     res.locals.user = req.user || null;
+//     next();
+// })
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
 // ROUTES
-// app.use("/", require("./routes/index"));
+app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 5000;
 
