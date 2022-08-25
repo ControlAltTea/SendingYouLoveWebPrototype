@@ -188,6 +188,10 @@ users =
 // User Script - think, feel, and do (What are they thinking, how will they feel, and what will they do?)
     // Walk through the users' actions and how app will play through that scenario
 
+// COLORS
+        // Bodies of text - tan adjacent backgrounds
+        // hunter green text - #355e3b
+
 // MVP - minimal viable product
     // what features are MVP
     // what features are not MVP
