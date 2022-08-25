@@ -1,4 +1,5 @@
 config.env
 *node_modules/
 design/
+*.psd
 SendingYouLoveNotes.js
