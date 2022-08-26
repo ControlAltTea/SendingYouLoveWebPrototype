@@ -1,5 +1,5 @@
 config.env
 *node_modules/
-design_files/
-*.psd
+*psds/
 SendingYouLoveNotes.js
+frontEndNotes.js
