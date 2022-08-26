@@ -2,6 +2,7 @@ config.env
 *node_modules/
 *xcf/
 *psds/
+*pngs/
 *.psd
 *.xcf
 SendingYouLoveNotes.js
