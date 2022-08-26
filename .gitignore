@@ -1,5 +1,6 @@
 config.env
 *node_modules/
 *psds/
+*xcf/
 SendingYouLoveNotes.js
 frontEndNotes.js
