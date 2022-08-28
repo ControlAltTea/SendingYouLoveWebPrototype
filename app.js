@@ -61,8 +61,6 @@ app.use(session({
 //     next();
 // })
 
-/// testing gitignore
-
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
