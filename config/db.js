@@ -1,20 +1,19 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const connectDB = async () => {
-    // attempts  to connect to the server on MongoDB, as opposed to the local server
-    //! Additional properties no longer needed
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI)
+        const conn = await mongoose.connect(process.env.DB_STRING, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true
+        })
 
-        // if connection is successful, console log the following message
-        console.log(`MongoDB connected: ${conn.connection.host}`)
-    }
-    // catches errors
-    catch (err) {
-        console.error(err);
-        process.exit(1);
+        console.log(`MongoDB Connected: ${conn.connection.host}`)
+    } catch (err) {
+        console.error(err)
+        process.exit(1)
     }
 }
 
-// exports the function, to be imported into another script and called at the appropriate time
 module.exports = connectDB

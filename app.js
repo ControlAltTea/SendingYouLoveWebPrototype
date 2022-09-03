@@ -1,72 +1,48 @@
-const path = require("path");
+const connectDB = require('./config/db')
+const authRoutes = require('./routes/authRoutes')
+
 const express = require("express");
-const dotenv = require("dotenv");
-const morgan = require("morgan");
-const exphs = require("express-handlebars");
-const methodOverride = require("method-override");
-// const passport = require("passport");
-const session = require('express-session');
-const MongoStore = require("connect-mongo");
-const connectDB = require("./config/db");
-
-// Load config
-dotenv.config({ path: './config/config.env' });
-
-// Passport config
-// require('./config/passport')(passport)
-
-// calls the connectDB function, located on the db.js
-connectDB();
-
 const app = express();
+const mongoose = require("mongoose");
+const passport = require("passport");
+const session = require("express-session");
+const MongoStore = require('connect-mongo')(session);
+const logger = require("morgan");
+const flash = require('express-flash');
 
-// Body Parser
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+require('dotenv').config({ path: './config/.env' })
+// Passport config
+require('./config/passport')(passport)
 
-// LOGGING
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan("dev"));
-}
+connectDB()
 
-// HANDLEBARS
-//!Add .engine after "exphs" to prevent error
-app.engine(
-    '.hbs',
-    exphs.engine({
-        defaultLayout: "main",
-        extname: '.hbs'
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(logger('dev'))
+
+// Sessions
+app.use(
+    session({
+        secret: "keyboard cat",
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({
+            mongoUrl: process.env.DB_STRING,
+
+        }),
     })
 );
 
-app.set("view engine", ".hbs");
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
-// checking if the user is in the database
-// if not, there is no session
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    store: MongoStore.create({
-        mongoUrl: process.env.MONGO_URI
-    })
-}))
+app.use(flash())
 
-// app.use(passport.initialize());
-// app.use((passport.session()));
+app.use('/', authRoutes);
 
-// set global var
-// app.use(function (req, res, next) {
-//     res.locals.user = req.user || null;
-//     next();
-// })
-
-// Static folder
-app.use(express.static(path.join(__dirname, 'public')))
-
-// ROUTES
-app.use("/", require("./routes/index"));
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
+app.listen(process.env.PORT, () => {
+    console.log('Server is running, you better catch it!')
+})    

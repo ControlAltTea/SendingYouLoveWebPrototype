@@ -18,7 +18,7 @@ const router = express.Router()
 // })
 
 router.get('/', (req, res) => {
-    console.log(`reached login`);
+    console.log(`reached index`);
     res.render('login',
         { layout: 'login' }
     )
