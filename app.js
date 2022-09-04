@@ -6,9 +6,10 @@ const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
+const flash = require('express-flash');
+// initialize connect-mongo with session
 const MongoStore = require('connect-mongo')(session);
 const logger = require("morgan");
-const flash = require('express-flash');
 
 require('dotenv').config({ path: './config/.env' })
 // Passport config
@@ -28,12 +29,12 @@ app.use(
         secret: "keyboard cat",
         resave: false,
         saveUninitialized: false,
-        store: MongoStore.create({
-            mongoUrl: process.env.DB_STRING,
-
-        }),
-    })
+        // use mongoose to find the mongoStore object
+        // mongoose.connection finds the DB_STRING from db.js
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
+    }),
 );
+
 
 // Passport middleware
 app.use(passport.initialize())
