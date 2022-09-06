@@ -1,5 +1,8 @@
 const express = require('express')
-const router = express.Router()
+const router = express.Router();
+
+// const authController = require('./controllers/authController'); 
+// const homeController = require('./controllers/homeController');
 // const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 // const Story = require('../models/Story')
@@ -16,8 +19,7 @@ const router = express.Router()
 //         res.render('error/404')
 //     }
 // })
-
-router.get('/', (req, res) => {
+exports.getIndex= (req, res) => {
     console.log(`reached index`);
     res.render('index',
         { title: 'Index'}
@@ -32,6 +34,6 @@ router.get('/', (req, res) => {
     //     console.error(err)
     //     res.render('error/404')
     // }
-})
+
 
 module.exports = router
