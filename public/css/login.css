@@ -15,6 +15,10 @@
     font-style: normal;
 }
 
+:root {
+    --dropShadow: 3px 3px 3px #1e3735; 
+}
+
 /* Box Model Hack */
 *{
   box-sizing: border-box;
@@ -30,17 +34,34 @@ img{
 }
 
 body {
-    width: 100vw;
+width: 100vw;
     height: 100vh;
     background-color: #FCFBEC;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
+.body{
+    background-color: #294D4A;
+    border: #294D4A;
+    border-radius: 2rem;
+    margin: 5px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(var(--dropShadow));
 }
 
 .navbar {
     width: 100%;
-    height: 7%;
+    height: 10%;
     padding: 4px;
+    margin-bottom: 20px;
     background-color: #294D4A;
+    filter: drop-shadow(var(--dropShadow));
 }
 
 h1 {
@@ -51,21 +72,35 @@ h1 {
 
 .navbar h1 {
     text-align: center;
+    margin: 10px;
     font-size: 32px;
     color: #FCFBEC;
+}
+
+.parent-container {
+    background-color: #FCFBEC;
+    border: #FCFBEC;
+    border-radius: 2rem;
+    margin: 10px;
+    width: 90%;
+    height: 90%;
 }
 
 .parent-container,
 .input-container {
     display: flex;
     align-self: center;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .login-container {
     display: flex;
+    padding: 5px;
+    width: 80%;
+    height: 80%;
     flex-direction: column;
-    padding: 30px;
 }
 
 .login-container h1 {
@@ -76,13 +111,13 @@ h1 {
 
 hr {
     height: 1px;
-    width: 80vw;
+    width: 80%;
     background-color: #445552;
 }
 
 input {
     padding: 5px;
-    border: 2px solid #294D4A;
+    border: 4px solid #294D4A;
     border-radius: 0.5rem;
     background-color: #FCFBEC;
 }
