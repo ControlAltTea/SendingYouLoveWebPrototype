@@ -1,0 +1,117 @@
+/******************************************
+/* CSS
+/*******************************************/
+@font-face {
+    font-family: "Champagne";
+    src: url('../fonts/Champagne/Champagne\ &\ Limousines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChampagneBold";
+    src: url('../fonts/Champagne/Champagne\ &\ Limousines\ Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FCFBEC;
+
+}
+
+.navbar {
+    width: 100%;
+    height: 7%;
+    padding: 4px;
+    background-color: #294D4A;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Champagne";
+}
+
+.navbar h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #FCFBEC;
+}
+
+.parent-container,
+.input-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.login-container h1 {
+    margin-bottom: 10px;
+     /* border-bottom: #294D4A 2px solid;
+     border-spacing: 15px; */
+}
+
+hr {
+    height: 1px;
+    width: 80vw;
+    background-color: #445552;
+}
+
+input {
+    padding: 5px;
+    border: 2px solid #294D4A;
+    border-radius: 0.5rem;
+    background-color: #FCFBEC;
+}
+
+.input-container {
+    font-family: "ChampagneBold";
+    color: #294D4A;
+}
+
+div .email,
+div .password,
+div .submitButton {
+    margin: 30px;
+    font-size: 24px;
+}
+
+div .submitButton {
+    height: 25%;
+}
+
+div .submitButton button {
+    background-color: #294D4A;
+    color: #FCFBEC;
+    width: 80%;
+    height: 100%;
+    border: #294D4A;
+    border-radius: 0.5rem;
+    font-family: "Champagne";
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
