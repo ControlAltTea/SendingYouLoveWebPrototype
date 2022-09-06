@@ -19,10 +19,10 @@ const router = express.Router();
 //         res.render('error/404')
 //     }
 // })
-exports.getIndex= (req, res) => {
+exports.getIndex = (req, res) => {
     console.log(`reached index`);
     res.render('index',
-        { title: 'Index'}
+        { title: 'Index' }
     )
     // try {
     //     console.log(`reached login`);
@@ -34,6 +34,6 @@ exports.getIndex= (req, res) => {
     //     console.error(err)
     //     res.render('error/404')
     // }
+}
 
-
-module.exports = router
+module.exports = router;
