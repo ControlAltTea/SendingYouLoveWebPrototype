@@ -5,18 +5,41 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/login.css">
         <title>Document</title>
     </head>
+    <style>
 
+    </style>
     <body>
-        <h1>Log In to Your Account</h1>
-        <form action="/login" method="POST">
-            <input type="email" name="email">
-            <label id="email" for="email" placeholder="Email">Email</label>
-            <input type="password" name="password">
-            <label for="password">Password</label>
-            <button type="submit">Submit</button>
-        </form>
+        <nav class="navbar">
+            <h1 id="sendingYouLoveText">Sending You Love</h1>
+        </nav>
+
+        <div class="parent-container">
+            <div class="login-container">
+                <h1>Log In</h1>
+                <hr class="titleLineBreak">
+                <div class="input-container">
+                    <form action="/login" method="POST">
+                        <div class="email">
+                            <label id="email" for="email">Email: </label>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="password">
+                            <label for="password">Password: </label>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="submitButton">
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
         <script></script>
     </body>
 
