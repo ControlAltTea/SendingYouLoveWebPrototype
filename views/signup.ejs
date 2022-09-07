@@ -4,22 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="/css/pages/login.css">
+    <link rel="stylesheet" href="/css/pages/signup.css">
+    <title>Sign Up</title>
 </head>
 <body>
-    <h1>Create a New Account</h1>
-    <form action="/signup" method="POST">
-        <input type="email" name="email">
-        <label id="email" for="email" placeholder="Email">Email</label>
-        <!--  -->
-        <input id="username" type="text" name="userName">
-        <label for="username" placeholder="Enter Username">Username</label>
-        <input type="password" name="password">
-        <label for="password">Password</label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
-        <label for="confirmPassword">Confirm Password</label>
-        <button type="submit">Submit</button>
-    </form>
+    <nav class="navbar">
+        <h1 id="sendingYouLoveText">Sending You Love</h1>
+    </nav>
+    <div class="body">
+        <div class="parent-container">
+            <div class="signup-container">
+                <h1>Create an Account</h1>
+                <hr class="titleLineBreak">
+                <div class="input-container">
+                    <form action="/signup" method="POST">
+                        <div class="email">
+                            <label id="email" for="email" placeholder="Email">Email: </label>
+                            <input type="email" name="email">
+                        </div>
+                        <div class="username">
+                            <label for="username" placeholder="Enter Username">Username: </label>
+                            <input id="username" type="text" name="userName">
+                        </div>
+                        <div class="password">
+                            <label for="password"> Password: </label>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="password">
+                            <label for="confirmPassword">Confirm Password: </label>
+                            <input type="password" name="confirmPassword" id="confirmPassword">
+                        </div>
+                        <div class="submitButton">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+/******************************************
+/* CSS
+/*******************************************/
+@font-face {
+    font-family: "Champagne";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChampagneBold";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines\ Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --dropShadow: 3px 3px 3px #1e3735; 
+}
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
