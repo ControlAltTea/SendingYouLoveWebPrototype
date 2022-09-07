@@ -8,14 +8,20 @@
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/pages/login.css">
-        <title>Document</title>
+        <title>Log In</title>
     </head>
     <style>
 
     </style>
     <body>
-        <nav class="navbar">
-            <h1 id="sendingYouLoveText">Sending You Love</h1>
+        <nav class="navbar" id="indexNav">
+            <div class="title">
+                <h1 id="sendingYouLoveText">Sending You Love</h1>
+            </div>
+            <div class="nav-links">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            </div>
         </nav>
         <div class="body">
             <div class="parent-container">
@@ -25,11 +31,11 @@
                     <div class="input-container">
                         <form action="/login" method="POST">
                             <div class="email">
-                                <label id="email" for="email">Email: </label>
+                                <label id="email" for="email">Email : </label>
                                 <input type="email" name="email" placeholder="Email">
                             </div>
                             <div class="password">
-                                <label for="password">Password: </label>
+                                <label for="password">Password : </label>
                                 <input type="password" name="password" placeholder="Password">
                             </div>
                             <div class="submitButton">

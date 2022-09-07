@@ -8,6 +8,8 @@ COMPLETE: authentication
 COMPLETE: Login.ejs
     - style the login.ejs
 
-TODO: signup.ejs
+COMPLETE: signup.ejs
+
+TODO: Index.ejs
 
 TODO: dashboard.ejs

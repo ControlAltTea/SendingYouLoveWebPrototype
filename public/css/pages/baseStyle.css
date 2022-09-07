@@ -1,0 +1,54 @@
+/******************************************
+/* CSS
+/*******************************************/
+@font-face {
+    font-family: "Champagne";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChampagneBold";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines\ Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --dropShadow: 3px 3px 3px #1e3735; 
+}
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FCFBEC;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding: 4px;
+    margin-bottom: 20px;
+    background-color: #294D4A;
+    filter: drop-shadow(var(--dropShadow));
+}

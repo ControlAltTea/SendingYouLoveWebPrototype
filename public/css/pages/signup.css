@@ -1,4 +1,111 @@
-.signup-container {
+/******************************************
+/* CSS
+/*******************************************/
+@font-face {
+    font-family: "Champagne";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ChampagneBold";
+    src: url('/fonts/Champagne/Champagne\ &\ Limousines\ Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --creme: #FCFBEC;
+    --hunter-green: #294D4A;
+    --dropShadow: 3px 3px 3px #1e3735; 
+}
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--creme);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body{
+    background-color: var(--hunter-green);
+    border: var(--hunter-green);
+    border-radius: 2rem;
+    margin: 5px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(var(--dropShadow));
+}
+
+.navbar {
+display: flex;
+    width: 100%;
+    height: 10%;
+    padding: 4px;
+    margin-bottom: 20px;
+    background-color: var( --hunter-green);
+    filter: drop-shadow(var(--dropShadow));
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-family: "Champagne";
+}
+
+.navbar h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 32px;
+    color: var(--creme);
+}
+
+.parent-container {
+    background-color: var(--creme);
+    border: var(--creme);
+    border-radius: 2rem;
+    margin: 10px;
+    width: 95%;
+    height: 90%;
+}
+
+.parent-container,
+.input-container {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-container {
     display: flex;
     padding: 5px;
     width: 80%;
@@ -6,8 +113,51 @@
     flex-direction: column;
 }
 
-.signup-container h1 {
+.login-container h1 {
     margin-bottom: 10px;
      /* border-bottom: #294D4A 2px solid;
      border-spacing: 15px; */
 }
+
+hr {
+    height: 1px;
+    width: 80%;
+    background-color: var(--hunter-green);
+}
+
+input {
+    padding: 5px;
+    border: 2px solid #294D4A;
+    border-radius: 0.5rem;
+    background-color:  var(--creme);
+}
+
+.input-container {
+    font-family: "ChampagneBold";
+    color: var(--hunter-green);
+}
+
+.email,
+.username,
+.password,
+.submitButton {
+    margin: 30px;
+    font-size: 24px;
+}
+
+.submitButton {
+    height: 25%;
+}
+
+.submitButton button {
+    background-color: var(--hunter-green);
+    color: var(--creme);
+    width: 80%;
+    height: 100%;
+    border: var(--hunter-green);
+    border-radius: 0.5rem;
+    font-family: "Champagne";
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
