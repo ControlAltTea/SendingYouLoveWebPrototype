@@ -16,7 +16,8 @@ TODO: Index.ejs
     - create splash for login and register (at the end of gif)
 
 TODO: user profile
-    - if user profile has not yet been created, prompt user to create profile
+    - if user profile has not yet been created, prompt user to create profile, redirect to /create_profile
+    - if user profile has already been created, do not prompt to create profile, redirect to /dashboard with appropriately populated user info ("Welcome, user!")
     - separate login model from user profile model
 
 TODO: dashboard.ejs
