@@ -19,7 +19,42 @@
         </div>
     </nav>
     <div class="container">
-        
+        <div class="parent-container">
+            <div class="parent-container" id="user-container">
+                <h1 class="welcome">
+                    Welcome, <span id="userName">[user]</span>!
+                </h1>
+                <hr>
+                <div class="parent-container" id="partner-info-container">
+                    <button class="partner-info-button">&lt;</button>
+                    <div class="parent-container" id="partner-info">
+                        <div class="partner-profile-picture"><img id="partner-profile-picture-img" src="../images/user_icon.png" alt=""></div>
+                        <div class="partner-info-text">
+                            <span class="partner-pronouns">
+                                They/them
+                            </span>
+                            <hr id="purple-horizontal-line">
+                            <div class="partner-status-container">
+                                <div class="partner-status-text">
+                                   <span class="current-status">Offline</span>
+                                   <span class="status-message">"This is a status message!"</span>
+                                   <div class="partner-location-info">
+                                    <span class="partner-city partner-country partner-timezone">
+                                        MI,USA (0:00AM)
+                                    </span>
+                                   </div>
+                                </div>
+                                <div class="notifications">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="partner-info-button">&gt;</button>
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
 </body>
 </html>
