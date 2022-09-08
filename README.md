@@ -11,9 +11,10 @@ COMPLETE: Login.ejs
 COMPLETE: signup.ejs
 
 TODO: Index.ejs
-    - create landing page gif
+    - COMPLETE: create landing page gif
     - create mission statement
-    - create splash for login and register (at the end of gif)
+    - COMPLETE: create splash for login and register (at the end of gif)
+        - Animate splash to ease it and out
         - Eliminate redirect to /login and simply have "/" play a splash when the login button is pressed
         - splash includes login form and a "/signup" redirect
 
