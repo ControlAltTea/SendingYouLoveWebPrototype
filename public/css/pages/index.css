@@ -46,17 +46,24 @@ body {
 }
 
 .body{
-    background-color: var(  --hunter-green);
-    border: #294D4A;
-    border-radius: 2rem;
-    margin: 5px;
     width: 90%;
     height: 90%;
     display: flex;
     justify-content: center;
-    filter: drop-shadow(var(--dropShadow));
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
 }
 
+.indexGif {
+    display: flex;
+    align-items: center;
+}
+
+.indexGif img {
+    width: 80%;
+    height: 90%;
+}
 
 .navbar {
     display: flex;
@@ -112,4 +119,86 @@ h1 {
     margin: 10px;
     font-size: 32px;
     color:  var(--creme);
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.loginSplash {
+    background-color: var(--hunter-green);
+    border: var(--hunter-green);
+    border-radius: 0.5rem;
+    margin: 5px;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(var(--dropShadow));
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    height: 1px;
+    width: 80%;
+    background-color: var(--hunter-green);
+}
+
+input {
+    padding: 5px;
+    border: 2px solid #294D4A;
+    border-radius: 0.5rem;
+    background-color:  var(--creme);
+}
+
+
+.input-container {
+display: flex;
+align-self: center;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-color: var(--creme);
+border: var(--creme);
+border-radius: 0.5rem;
+margin: 5px;
+width: 90%;
+height: 90%;
+display: flex;
+justify-content: center;
+font-family: "ChampagneBold";
+color: var(--hunter-green);
+}
+
+.email,
+.username,
+.password,
+.submitButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.submitButton {
+    height: 25%;
+}
+
+.submitButton button {
+    background-color: var(--hunter-green);
+    color: var(--creme);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    width: 100%;
+    height: 100%;
+    border: var(--hunter-green);
+    border-radius: 0.5rem;
+    font-family: "Champagne";
 }

@@ -180,6 +180,10 @@ input {
     color: var(--creme);
     width: 80%;
     height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
     border: var(--hunter-green);
     border-radius: 0.5rem;
     font-family: "Champagne";
