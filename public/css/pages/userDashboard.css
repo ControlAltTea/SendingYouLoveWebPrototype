@@ -117,7 +117,8 @@ h1 {
     filter: drop-shadow(var(--dropShadow));
 }
 
-#user-container {
+#user-container,
+#actions-container {
     display: flex;
     align-self: center;
     align-items: center;
@@ -221,5 +222,47 @@ img {
     padding-right: 10px;
     background-color: var(--creme);
     border: var(--hunter-green) 3px solid;
+    border-radius: 0.5rem;
+}
+
+#actions-container-outer {
+    height: 100%;
+    width: 100%;
+    background-color: var(--creme);
+    border: var(--creme);
+    filter: none;
+}
+
+#actions-container {
+    height: 90%;
+    width: 90%;
+    background-color: var(--creme);
+    border: var(--creme);
+    border-radius: 0.5rem;
+}
+
+#actions-container-inner {
+display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: var(--hunter-green);
+    border: var(--hunter-green);
+    border-radius: 0.5rem;
+    flex-direction: row;
+}
+
+.actions-column {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-background {
+    height: 33%;
+    width: 80%;
+    margin: 10px;
+    background-color: var(--creme);
+    border: var(--creme);
     border-radius: 0.5rem;
 }
