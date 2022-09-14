@@ -10,7 +10,7 @@
     <title>Dashboard</title>
 </head>
 <body class="flex">
-    <nav class="navbar flex drop-shadow" id="dashboardNav">
+    <nav class="navbar flex flex-direction-row drop-shadow" id="dashboardNav">
         <a href="/">
             <h1>Sending You Love</h1>
         </a>
@@ -19,16 +19,16 @@
         </div>
     </nav>
     <div class="container flex">
-       <div class="parent-container flex hunter-green-border-radius drop-shadow" id="dashboard-container">
-           <div class="parent-container flex creme-border-radius filter-none" id="user-container">
+       <div class="parent-container flex hunter-green-bg hunter-green-border-radius drop-shadow" id="dashboard-container">
+           <div class="parent-container flex creme-bg border-radius box-shadow" id="user-container">
                 <h1 class="welcome">
                     Welcome, <span id="userName">[user]</span>!
                 </h1>
                 <hr>
-                    <div class="parent-container drop-shadow filter-none" id="partner-info-container">
-                        <button class="partner-info-button">&lt;</button>
-                        <div class="parent-container flex light-purple-border-radius drop-shadow filter-none" id="partner-info">
-                            <div class="partner-profile-picture flex"><img id="partner-profile-picture-img" src="/public/images/user_icon.png" alt="">
+                    <div class="parent-container flex flex-direction-row drop-shadow filter-none" id="partner-info-container">
+                        <button class="partner-info-button hunter-green-bg hunter-green-border-radius drop-shadow">&lt;</button>
+                        <div class="parent-container flex flex-direction-row light-purple-border-radius drop-shadow" id="partner-info">
+                            <div class="partner-profile-picture flex flex-direction-row"><img id="partner-profile-picture-img" src="/public/images/user_icon.png" alt="">
                             </div>
                             <div class="partner-info-text">
                                 <span class="partner-pronouns">
@@ -45,23 +45,44 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="notifications">
-                                        <img src="" alt="">
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <button class="partner-info-button hunter-green-bg hunter-green-border-radius drop-shadow">&gt;</button>
+                    </div>
+                    <hr>
+                    <div class="parent-container flex flex-direction-row creme-bg" id="actions-container-outer" >
+                        <button class="partner-info-button hunter-green-bg hunter-green-border-radius drop-shadow">&lt;</button>
+                        <div class="parent-container flex hunter-green-bg hunter-green-border-radius drop-shadow" id="actions-container-inner">
+                            <div class="parent-container flex flex-direction-row border-radius creme-bg box-shadow">
+                                <div class="action-profile-picture flex"><img src="/public/images/user_icon.png"
+                                        alt="">
+                                </div>
+                                <div class="parent-container actions-container light-purple-border-radius drop-shadow">
+                                    
+                                </div>
+                            </div>
+                            <div class="parent-container flex flex-direction-row border-radius creme-bg box-shadow">
+                                <div class="action-profile-picture flex"><img src="/public/images/user_icon.png"
+                                    alt="">
+                                </div>
+                                <div class="parent-container actions-container light-purple-border-radius drop-shadow">
+                                    
+                                </div>
+                            </div>
+                            <div class="parent-container flex flex-direction-row border-radius creme-bg box-shadow">
+                                <div class="action-profile-picture flex"><img src="/public/images/user_icon.png"
+                                        alt="">
+                                </div>
+                                <div class="parent-container actions-container light-purple-border-radius drop-shadow">
+                                    
                                 </div>
                             </div>
                         </div>
-                        <button class="partner-info-button">&gt;</button>
-                    </div>
-                    <hr>
-                    <div class="parent-container flex creme-border-radius" id="actions-container-inner" >
-                        <button class="partner-info-button">&lt;</button>
-                        <div class="parent-container flex hunter-green-border-radius" id="actions-container-outer">
-                            <div class="parent-container creme-border-radius"></div>
-                            <div class="parent-container creme-border-radius"></div>
-                            <div class="parent-container creme-border-radius"></div>
-                        </div>
-                        <button class="partner-info-button">&gt;</button>
+                        <button class="partner-info-button hunter-green-bg hunter-green-border-radius drop-shadow">&gt;</button>
 
                     </div>
                 </div>
