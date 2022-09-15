@@ -211,6 +211,11 @@
         background-color: var(--raisin-black);
     }
 
+    #purple-horizontal-line {
+        height: 2px;
+        background-color: var(--creme);
+    }
+
     #partner-info-container {
         height: 25%;
         margin: 0;
