@@ -13,22 +13,22 @@
     <style>
 
     </style>
-    <body>
-    <nav class="navbar" id="indexNav">
+    <body class="flex raisin-black-bg">
+    <nav class="navbar flex" id="indexNav">
         <a href="/">
             <h1>Sending You Love</h1>
         </a>
-        <div class="nav-links">
+        <div class="nav-links flex">
             <li><a href="/">Home</a></li>
             <li><a href="/signup">Sign Up</a></li>
         </div>
     </nav>
-        <div class="body">
-            <div class="parent-container">
+        <div class="container flex flex-direction-column border-radius creme-bg box-shadow">
+            <div class="parent-container flex border-radius">
                 <div class="login-container">
-                    <h1>Log In</h1>
+                    <h1 class="title">Log In</h1>
                     <hr class="titleLineBreak">
-                    <div class="input-container">
+                    <div class="input-container flex">
                         <form action="/login" method="POST">
                             <div class="email">
                                 <label id="email" for="email">Email : </label>
@@ -38,9 +38,9 @@
                                 <label for="password">Password : </label>
                                 <input type="password" name="password" placeholder="Password">
                             </div>
-                            <div class="submitButton">
-                                <button type="submit">Login</button>
-                            </div>
+                                <div class="submitButton">
+                                    <button type="submit">Login</button>
+                                </div>
                         </form>
                     </div>
                 </div>
