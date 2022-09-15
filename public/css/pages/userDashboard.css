@@ -16,15 +16,16 @@
 }
 
 :root {
-    --creme: #fcfbec;
+    --creme: #fcfbed;
     --creme-shadow: hsla(56, 27%, 77%, 0.15);
     --hunter-green: #23524e;
     --hunter-green-shadow: hsla(175, 32%, 23%, 0.1);
     --light-green:#73937E;
     --light-purple: #A799B7;
     --dark-purple: #9888A5;
-    --dropShadow: 1px 1px 1px #1e3735;
-    --box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.781);
+    --raisin-black: #2E2E3A;
+    --dropShadow: 1px 1px 1px #1a1b1b;
+    --box-shadow: inset 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     --border-radius: 0.25rem;
 }
 
@@ -55,6 +56,10 @@
     border-radius: var(--border-radius);
 }
 
+.circle-radius {
+    border-radius: 100%;
+}
+
 .creme-bg {
     background-color: var(--creme);
 }
@@ -75,6 +80,10 @@
 .hunter-green-border-radius {
     border: var(--hunter-green-shadow) 4px solid;
     border-radius: var(--border-radius);
+}
+
+.raisin-black-bg {
+    background-color: var(--raisin-black);
 }
 
 .light-purple-bg {
@@ -176,14 +185,14 @@
         align-self: center;
         align-items: center;
         justify-content: center;
-        margin: 5px;
         width: 98%;
         height: 90%;
+        margin: 1%;
     }
 
-    #dashboard-container {
+    /* #dashboard-container {
         height: 100%;
-    }
+    } */
 
     #user-container,
     #actions-container {
@@ -215,7 +224,6 @@
         justify-content: center;
         align-items: center;
         padding: 2%;
-        background-color: var(--light-purple);
     }
 
     .partner-profile-picture,
@@ -312,8 +320,9 @@
         width: 100%;
         margin: 1%;
         text-align: center;
-        font-size: 0.9rem;
-        font-weight: 400;
+        letter-spacing: 0.1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
         font-family: "Champagne";
         color: var(--creme);
     }
@@ -324,10 +333,11 @@
         padding-left: 10%;
         padding-right: 10%;
         margin: 2%;
+        letter-spacing: 0.1rem;
         font-size: 0.9rem;
-        font-weight: 600;
+        font-weight: 700;
         font-family: "Champagne";
-        color: var(--creme);
+        color: var(--raisin-black);
     }
 
 
@@ -346,4 +356,5 @@
         width: 50%;
         height: 60%;
     }
+
 }
