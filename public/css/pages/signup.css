@@ -1,4 +1,4 @@
-/******************************************
+ /******************************************
 /* CSS
 /*******************************************/
 @font-face {
@@ -16,9 +16,17 @@
 }
 
 :root {
-    --creme: #FCFBEC;
-    --hunter-green: #294D4A;
-    --dropShadow: 3px 3px 3px #1e3735; 
+    --creme: #fcfbed;
+    --creme-shadow: hsla(56, 27%, 77%, 0.15);
+    --hunter-green: #23524e;
+    --hunter-green-shadow: hsla(175, 32%, 23%, 0.1);
+    --light-green:#73937E;
+    --light-purple: #A799B7;
+    --dark-purple: #9888A5;
+    --raisin-black: #2E2E3A;
+    --dropShadow: 1px 1px 1px #1a1b1b;
+    --box-shadow: inset 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    --border-radius: 0.25rem;
 }
 
 /* Box Model Hack */
@@ -26,168 +34,243 @@
   box-sizing: border-box;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-  width: 25%;
+/*************************/
+/* display: flex */
+.flex {
+    display: flex;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--creme);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.body{
-    background-color: var(--hunter-green);
-    border: var(--hunter-green);
-    border-radius: 0.5rem;
-    margin: 5px;
-    width: 90%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    filter: drop-shadow(var(--dropShadow));
-}
-
-.navbar {
-    display: flex;
-    width: 100%;
-    height: 10%;
-    padding: 4px;
-    margin-bottom: 20px;
-    background-color: var( --hunter-green);
-    filter: drop-shadow(var(--dropShadow));
+.flex-direction-row {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 }
 
-
-.title {
-    display: flex;
-    justify-content: center;
+.flex-direction-column {
+    flex-direction: column;
 }
 
-.nav-links {
-    display: flex;
-    width: 30%;
-    justify-content: flex-end;
-    align-items: center;
+.box-shadow {
+    box-shadow:var(--box-shadow);
 }
 
-li {
-    list-style-type: none;
-    color: var(--creme);
-    margin: 0px 10px 0px 10px;
-    font-size: 32px;
-    font-family: "Champagne";
+.border-radius{
+    border-radius: var(--border-radius);
 }
 
-a {
-    text-decoration: none;
-    color: var(--creme);
+.circle-radius {
+    border-radius: 100%;
 }
 
-a:hover{
-    text-decoration: underline solid;
-}
-
-h1 {
-    text-align: center;
-    font-size: 32px;
-    font-family: "Champagne";
-}
-
-.navbar h1 {
-    text-align: center;
-    margin: 10px;
-    font-size: 32px;
-    color: var(--creme);
-}
-
-.parent-container {
+.creme-bg {
     background-color: var(--creme);
-    border: var(--creme);
-    border-radius: 0.5rem;
-    margin: 10px;
-    width: 95%;
-    height: 90%;
 }
 
-.parent-container,
-.input-container {
-    display: flex;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.creme-border-radius {
+    border: var(--creme-shadow) 4px solid;
+    border-radius: var(--border-radius);
 }
 
-.login-container {
-    display: flex;
-    padding: 5px;
-    width: 80%;
-    height: 80%;
-    flex-direction: column;
+.light-green-bg {
+    background-color: var(--light-green);
 }
 
-.login-container h1 {
-    margin-bottom: 10px;
-     /* border-bottom: #294D4A 2px solid;
-     border-spacing: 15px; */
-}
-
-hr {
-    height: 1px;
-    width: 80%;
+.hunter-green-bg {
     background-color: var(--hunter-green);
 }
 
-input {
-    padding: 5px;
-    border: 2px solid #294D4A;
-    border-radius: 0.5rem;
-    background-color:  var(--creme);
+.hunter-green-border-radius {
+    border: var(--hunter-green-shadow) 4px solid;
+    border-radius: var(--border-radius);
 }
 
-.input-container {
-    font-family: "ChampagneBold";
-    color: var(--hunter-green);
+.raisin-black-bg {
+    background-color: var(--raisin-black);
 }
 
-.email,
-.username,
-.password,
-.submitButton {
-    margin: 30px;
-    font-size: 24px;
+.light-purple-bg {
+    background-color: var(--light-purple);
 }
 
-.submitButton {
-    height: 25%;
+.light-purple-border-radius {
+    border: var(--light-purple) 2px solid;
+    border-radius: 0.25rem;
 }
 
-.submitButton button {
-    background-color: var(--hunter-green);
-    color: var(--creme);
-    width: 80%;
-    height: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 80px;
-    padding-right: 80px;
-    border: var(--hunter-green);
-    border-radius: 0.5rem;
-    font-family: "Champagne";
+.dark-purple-bg {
+    background-color: var(--dark-purple);
 }
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+
+.dark-purple-border-radius {
+    border: var(--dark-purple) 2px solid;
+    border-radius: 0.25rem;
+}
+
+.drop-shadow {
+    filter: drop-shadow(var(--dropShadow));
+}
+
+.filter-none {
+    filter: none;
+}
+
+/***** MEDIA QUERIES ******/
+@media (max-width: 380px){
+    /******************************************
+    /* LAYOUT
+    /*******************************************/
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--creme);
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 10%;
+        padding: 4px;
+        margin-bottom: 10px;
+        background-color: var( --hunter-green);
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        width: 30%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    li {
+        list-style-type: none;
+        color: var(--creme);
+        margin: 0px 3% 0px 3%;
+        font-size: 1.5rem;
+        font-family: "Champagne";
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--creme);
+    }
+
+    a:hover{
+        text-decoration: underline solid;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 1.5rem;
+        font-family: "Champagne";
+    }
+
+    .navbar h1 {
+        text-align: center;
+        margin: 10px;
+        font-size: 32px;
+        color:  var(--creme);
+    }
+
+    .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* padding-top: 30px; */
+    }
+
+    .parent-container {
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        width: 98%;
+        height: 90%;
+        margin: 1%;
+    }
+
+    .parent-container,
+    .input-container {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .signup-container {
+        display: flex;
+        padding: 5px;
+        width: 90%;
+        height: 90%;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .signup-container h1 {
+        margin-bottom: 10px;
+        /* border-bottom: #294D4A 2px solid;
+        border-spacing: 15px; */
+    }
+
+    hr {
+        height: 1px;
+        width: 80%;
+        background-color: var(--hunter-green);
+    }
+
+    label {
+        width: 40%;
+        font-size: 1.2rem;
+    }
+
+    input {
+        padding: 5px;
+        margin: 3%;
+        border: 2px solid #294D4A;
+        border-radius: 0.5rem;
+        background-color:  var(--creme);
+    }
+
+    .input-container {
+        display: flex;
+        font-family: "ChampagneBold";
+        color: var(--hunter-green);
+    }
+
+    .email,
+    .username,
+    .password,
+    .submitButton {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .submitButton {
+        display: flex;
+        flex-direction: column;
+        height: 25%;
+    }
+
+    .submitButton button {
+        background-color: var(--hunter-green);
+        color: var(--creme);
+        width: 80%;
+        height: 70%;
+        margin: 3%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 80px;
+        padding-right: 80px;
+        border: var(--hunter-green);
+        border-radius: 0.5rem;
+        font-family: "Champagne";
+    }
+    /******************************************
+    /* ADDITIONAL STYLES
+    /*******************************************/
+}
