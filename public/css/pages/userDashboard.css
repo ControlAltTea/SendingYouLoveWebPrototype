@@ -208,7 +208,7 @@
         height: 1px;
         width: 80%;
         margin: 1%;
-        background-color: var(--hunter-green);
+        background-color: var(--raisin-black);
     }
 
     #partner-info-container {
@@ -333,11 +333,11 @@
         padding-left: 10%;
         padding-right: 10%;
         margin: 2%;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.2rem;
         font-size: 0.9rem;
         font-weight: 700;
         font-family: "Champagne";
-        color: var(--raisin-black);
+        color: var(--creme);
     }
 
 
