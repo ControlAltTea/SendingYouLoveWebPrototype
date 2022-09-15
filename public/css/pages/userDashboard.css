@@ -20,6 +20,7 @@
     --creme-shadow: hsla(56, 27%, 77%, 0.15);
     --hunter-green: #23524e;
     --hunter-green-shadow: hsla(175, 32%, 23%, 0.1);
+    --light-green:#73937E;
     --light-purple: #A799B7;
     --dark-purple: #9888A5;
     --dropShadow: 1px 1px 1px #1e3735;
@@ -63,6 +64,10 @@
     border-radius: var(--border-radius);
 }
 
+.light-green-bg {
+    background-color: var(--light-green);
+}
+
 .hunter-green-bg {
     background-color: var(--hunter-green);
 }
@@ -72,9 +77,21 @@
     border-radius: var(--border-radius);
 }
 
-.light-purple-border-radius {
+.light-purple-bg {
     background-color: var(--light-purple);
+}
+
+.light-purple-border-radius {
     border: var(--light-purple) 2px solid;
+    border-radius: 0.25rem;
+}
+
+.dark-purple-bg {
+    background-color: var(--dark-purple);
+}
+
+.dark-purple-border-radius {
+    border: var(--dark-purple) 2px solid;
     border-radius: 0.25rem;
 }
 
@@ -204,16 +221,21 @@
     .partner-profile-picture,
     .action-profile-picture  {
         padding: 7%;
-        width: 60%;
+        width: 40%;
         height: 100%;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
 
+    img {
+        width: 110%;
+    }
+
     .partner-info-text {
         width: 100%;
         height: 100%;
+        padding: 2%
     }
 
     #purple-horizontal-line {
@@ -278,7 +300,34 @@
 
     .actions-container {
         height: 90%;
+        width: 110%;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .actions-container span {
         width: 100%;
+        margin: 1%;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 400;
+        font-family: "Champagne";
+        color: var(--creme);
+    }
+
+    .actions-container button {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin: 2%;
+        font-size: 0.9rem;
+        font-weight: 600;
+        font-family: "Champagne";
+        color: var(--creme);
     }
 
 
@@ -293,18 +342,6 @@
         /* flex-direction: column; */
         align-items: center;
     }
-/* 
-    .action-background {
-        height: 33%;
-        width: 80%;
-        margin: 10px;
-    }
-
-    .action-profile-picture-container {
-        width: 100%;
-        height: 100%;
-    } */
-
     .action-profile-picture {
         width: 50%;
         height: 60%;
