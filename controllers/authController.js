@@ -3,6 +3,8 @@ const passport = require("passport");
 const validator = require("validator");
 const UserLogin = require("../models/UserLogin");
 const UserProfile = require("../models/UserProfile");
+const CurrentUser = require("../models/CurrentUser")
+
 
 exports.getIndex = (req, res) => {
     try {
@@ -53,7 +55,6 @@ exports.postSignup = (req, res, next) => {
 
     if (validationErrors.length) {
         req.flash("errors", validationErrors);
-        console.log(`2`);
         return res.redirect("../signup");
     }
     req.body.email = validator.normalizeEmail(req.body.email, {
@@ -112,7 +113,8 @@ exports.getUserProfile = (req, res) => {
         if (req.userProfile) {
             return res.redirect("/dashboard");
         }
-        console.log(`2`);
+
+        console.log(`userProfileName not found`);
         res.render("createUserProfile", {
             title: "Creating User Profile"
         });
@@ -129,15 +131,34 @@ to test, first check just for name
 */
 
 exports.postUserProfile = (req, res, next) => {
-    if (!req.body.name) {
-        alert("please enter name");
-    }
-
     const userProfile = new UserProfile({
-        name: req.body.userProfileName,
+        userProfileName: req.body.userProfileName
     });
-    
+
     console.log(`UserProfile`, userProfile);
+
+    UserProfile.findOne(
+        { userProfileName: req.body.userProfileName },
+        (err, existingUser) => {
+            if (err) {
+                return next(err);
+            }
+            if (existingUser) {
+                console.log(`existingProfile`, existingUser);
+                req.flash("errors", {
+                    msg: "Account with that email address or username already exists.",
+                });
+                console.log(`3`);
+                return res.redirect("../createUserProfile");
+            }
+            userProfile.save((err) => {
+                if (err) {
+                    return next(err);
+                }
+                res.redirect("/dashboard");
+            });
+        }
+    );
 }
 
 
@@ -152,7 +173,7 @@ exports.postUserProfile = (req, res, next) => {
 // checkLogin
 exports.getLogin = (req, res) => {
     if (req.user) {
-        console.log(`user logging`);
+        console.log(`getLogin user`, req.user);
         return res.redirect("/dashboard");
     }
     res.render("login", {
@@ -196,6 +217,7 @@ exports.postLogin = (req, res, next) => {
             if (err) {
                 return next(err);
             }
+
             req.flash("success", { msg: "Success! You are logged in." });
             console.log(`User: `, user);
             console.log(`login successful`);
@@ -209,13 +231,16 @@ exports.postLogin = (req, res, next) => {
 // 
 exports.getDashboard = (req, res) => {
     try {
+        console.log(`req.userProfile`, req.userProfile);
+        // const currentUser = new CurrentUser({
+        //     auth: req.body.auth,
+        //     userProfileName
+        // })
         if (req.userProfile) {
             res.render('dashboard',
                 { title: 'dashboard' })
         }
-        return res.redirect("/createUserProfile",{
-            title: "Create User Profile"
-        })
+        res.redirect("/createUserProfile")
     } catch (err) {
         console.error(err)
     }

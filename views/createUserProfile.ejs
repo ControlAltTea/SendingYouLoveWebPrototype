@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User Profile</title>
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="/css/pages/signup.css">
+        <title>Create Profile</title>
+    </head>
+
+    <body class="raisin-black-bg">
+        <nav class="navbar flex flex-direction-row" id="indexNav">
+            <a href="/">
+                <h1>Sending You Love</h1>
+            </a>
+        </nav>
+        <div class="container">
+            <div class="parent-container signup-container border-radius box-shadow creme-bg">
+                <h1>Create a Profile</h1>
+                <hr class="titleLineBreak">
+                <div class="input-container">
+                    <form action="/createUserProfile" method="POST">
+                        <div class="name">
+                            <label id="name" for="userProfileName" placeholder="First Name">Name : </label>
+                            <input type="text" name="userProfileName">
+                        </div>
+                        <div class="submitButton">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script></script>
+    </body>
+
 </html>
