@@ -1,0 +1,8 @@
+socket io
+    - real-time status updates
+
+partner info
+    - stored in a partner object based on partner ObjectID
+    #TODO: create partner object for storing partner information
+        - 'potentially during partner connection operation'
+    #TODO: create connect to partner page

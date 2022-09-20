@@ -4,7 +4,6 @@ const validator = require("validator");
 const UserLogin = require("../models/UserLogin");
 const UserProfile = require("../models/UserProfile");
 
-
 exports.getIndex = (req, res) => {
     try {
         console.log(`index user`, req.user);
@@ -135,7 +134,7 @@ exports.postUserProfile = (req, res, next) => {
     }
 
     const userProfile = new UserProfile({
-        name: req.body.userProfileName
+        name: req.body.userProfileName,
     });
     
     console.log(`UserProfile`, userProfile);
@@ -206,13 +205,17 @@ exports.postLogin = (req, res, next) => {
 };
 
 
+// instatiate objects outside the authController
+// 
 exports.getDashboard = (req, res) => {
     try {
         if (req.userProfile) {
             res.render('dashboard',
                 { title: 'dashboard' })
         }
-        
+        return res.redirect("/createUserProfile",{
+            title: "Create User Profile"
+        })
     } catch (err) {
         console.error(err)
     }

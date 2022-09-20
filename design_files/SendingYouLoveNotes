@@ -225,6 +225,14 @@ users =
 // React? React native?
     // Managing state (https://www.youtube.com/watch?v=2DV-bONIPqQ)
 
+
+// real-time inputs (online status, message status, timezone info)
+    // (https://socket.io/)
+    // web sockets
+    // as soon as a person logs in, it pings you
+    // constant pinging
+    // once other person is logged out (connection lost), no longer pinging
+
 // Haptic feedback
     // Different vibrations for different actions?
         // holding hands is similar to a faster heartrate
