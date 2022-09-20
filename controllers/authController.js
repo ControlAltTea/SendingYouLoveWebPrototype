@@ -2,6 +2,8 @@ const express = require('express')
 const passport = require("passport");
 const validator = require("validator");
 const UserLogin = require("../models/UserLogin");
+const UserProfile = require("../models/UserProfile");
+
 
 exports.getIndex = (req, res) => {
     try {
@@ -98,6 +100,48 @@ exports.postSignup = (req, res, next) => {
     );
 };
 
+/*
+after login, check if a user profile has been created
+if a user profile is not received,
+redirect to /createUserProfile
+information should include everything that would be included in a partner's
+profile page, such as name, pronouns, birthday, anniversary, favorites, etc.
+*/
+
+exports.getUserProfile = (req, res) => {
+    try {
+        if (req.userProfile) {
+            return res.redirect("/dashboard");
+        }
+        console.log(`2`);
+        res.render("createUserProfile", {
+            title: "Creating User Profile"
+        });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+/*
+if the user profile does not exist,
+redirect to the createUserProfile page
+create a UserProfile with: name (string), pronouns (strings), birthday (num)
+to test, first check just for name
+*/
+
+exports.postUserProfile = (req, res, next) => {
+    if (!req.body.name) {
+        alert("please enter name");
+    }
+
+    const userProfile = new UserProfile({
+        name: req.body.userProfileName
+    });
+    
+    console.log(`UserProfile`, userProfile);
+}
+
+
 // requests user information
 // checking if you are logged
 // if logged in
@@ -154,17 +198,21 @@ exports.postLogin = (req, res, next) => {
                 return next(err);
             }
             req.flash("success", { msg: "Success! You are logged in." });
+            console.log(`User: `, user);
             console.log(`login successful`);
             res.redirect(req.session.returnTo || "/dashboard");
         });
     })(req, res, next);
 };
 
+
 exports.getDashboard = (req, res) => {
     try {
-        res.render('dashboard',
-            { title: 'dashboard' }
-        )
+        if (req.userProfile) {
+            res.render('dashboard',
+                { title: 'dashboard' })
+        }
+        
     } catch (err) {
         console.error(err)
     }

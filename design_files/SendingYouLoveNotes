@@ -5,16 +5,12 @@
     - 'select user information is also displayed on partners dashboard'
 #TODO user settings
 
-
 #FIXME
 
 #COMPLETE incorporate navigation arrows on the partner(s) banner
 #COMPLETE incorporate navigation arrows on the  "love languages" areas
 #COMPLETE user dashboard design
 #COMPLETE user settings design
-
-let arr = [1, '+'];
-let [num,operation] = arr;
     
 // Sending You Love
 users = 
