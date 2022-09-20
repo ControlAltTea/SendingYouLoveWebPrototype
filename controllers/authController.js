@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require("passport");
 const validator = require("validator");
-const User = require("../models/User");
+const UserLogin = require("../models/UserLogin");
 
 exports.getIndex = (req, res) => {
     try {
@@ -59,7 +59,7 @@ exports.postSignup = (req, res, next) => {
         gmail_remove_dots: false,
     });
 
-    const user = new User({
+    const user = new UserLogin({
         userName: req.body.userName,
         email: req.body.email,
         password: req.body.password,
@@ -67,7 +67,7 @@ exports.postSignup = (req, res, next) => {
 
     console.log(`user`, user);
 
-    User.findOne(
+    UserLogin.findOne(
         { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
         (err, existingUser) => {
             if (err) {
