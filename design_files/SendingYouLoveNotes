@@ -1,9 +1,15 @@
+#TODO format index at mobile resolution
+#TODO redirect index to user profile creation if user profile does not currently exist
+#TODO link user model to their user profile
+    - 'user profile information is displayed in current users profile settings'
+    - 'select user information is also displayed on partners dashboard'
 #TODO user settings
-#TODO incorporate navigation arrows on the partner(s) banner
-#TODO incorporate navigation arrows on the  "love languages" areas
+
 
 #FIXME
 
+#COMPLETE incorporate navigation arrows on the partner(s) banner
+#COMPLETE incorporate navigation arrows on the  "love languages" areas
 #COMPLETE user dashboard design
 #COMPLETE user settings design
 
