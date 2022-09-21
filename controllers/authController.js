@@ -1,14 +1,12 @@
 const express = require('express')
 const passport = require("passport");
 const validator = require("validator");
-const UserLogin = require("../models/UserLogin");
+const UserLogin = require("../models/User");
 const UserProfile = require("../models/UserProfile");
-const CurrentUser = require("../models/CurrentUser")
 
 
 exports.getIndex = (req, res) => {
     try {
-        console.log(`index user`, req.user);
         res.render('index', {
             title: 'Index'
         })
@@ -62,15 +60,17 @@ exports.postSignup = (req, res, next) => {
     });
 
     const user = new UserLogin({
-        userName: req.body.userName,
         email: req.body.email,
         password: req.body.password,
+        profile: {
+            userProfileName: req.body.userProfileName
+        }
     });
 
     console.log(`user`, user);
 
     UserLogin.findOne(
-        { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+        { email: req.body.email },
         (err, existingUser) => {
             if (err) {
                 return next(err);
@@ -99,67 +99,6 @@ exports.postSignup = (req, res, next) => {
         }
     );
 };
-
-/*
-after login, check if a user profile has been created
-if a user profile is not received,
-redirect to /createUserProfile
-information should include everything that would be included in a partner's
-profile page, such as name, pronouns, birthday, anniversary, favorites, etc.
-*/
-
-exports.getUserProfile = (req, res) => {
-    try {
-        if (req.userProfile) {
-            return res.redirect("/dashboard");
-        }
-
-        console.log(`userProfileName not found`);
-        res.render("createUserProfile", {
-            title: "Creating User Profile"
-        });
-    } catch (err) {
-        console.error(err);
-    }
-}
-
-/*
-if the user profile does not exist,
-redirect to the createUserProfile page
-create a UserProfile with: name (string), pronouns (strings), birthday (num)
-to test, first check just for name
-*/
-
-exports.postUserProfile = (req, res, next) => {
-    const userProfile = new UserProfile({
-        userProfileName: req.body.userProfileName
-    });
-
-    console.log(`UserProfile`, userProfile);
-
-    UserProfile.findOne(
-        { userProfileName: req.body.userProfileName },
-        (err, existingUser) => {
-            if (err) {
-                return next(err);
-            }
-            if (existingUser) {
-                console.log(`existingProfile`, existingUser);
-                req.flash("errors", {
-                    msg: "Account with that email address or username already exists.",
-                });
-                console.log(`3`);
-                return res.redirect("../createUserProfile");
-            }
-            userProfile.save((err) => {
-                if (err) {
-                    return next(err);
-                }
-                res.redirect("/dashboard");
-            });
-        }
-    );
-}
 
 
 // requests user information
@@ -230,21 +169,25 @@ exports.postLogin = (req, res, next) => {
 // instatiate objects outside the authController
 // 
 exports.getDashboard = (req, res) => {
-    try {
-        console.log(`req.userProfile`, req.userProfile);
-        // const currentUser = new CurrentUser({
-        //     auth: req.body.auth,
-        //     userProfileName
-        // })
-        if (req.userProfile) {
-            res.render('dashboard',
-                { title: 'dashboard' })
-        }
-        res.redirect("/createUserProfile")
+    console.log(`req.profile`, req.user.profile)
+    try {        
+        res.render('dashboard',
+        { title: 'dashboard' })
     } catch (err) {
         console.error(err)
     }
 }
+
+// exports.postDashboard = (req, res) => {
+//     try {
+//         const userProfile = new UserProfile({
+//             userProfileName: req.user.profile.userProfile
+//         });
+//     }
+//     catch (err) {
+//         console.error(err);
+//     } 
+// }
 
 // destroys the current user session
 // redirect
@@ -261,4 +204,3 @@ exports.logout = (req, res) => {
         res.redirect("/");
     });
 };
-
