@@ -170,24 +170,17 @@ exports.postLogin = (req, res, next) => {
 // 
 exports.getDashboard = (req, res) => {
     console.log(`req.profile`, req.user.profile)
+    const userProfileName = req.user.profile.userProfileName;
     try {        
         res.render('dashboard',
-        { title: 'dashboard' })
+            {
+                title: 'dashboard',
+                userProfileName: userProfileName
+            })
     } catch (err) {
         console.error(err)
     }
 }
-
-// exports.postDashboard = (req, res) => {
-//     try {
-//         const userProfile = new UserProfile({
-//             userProfileName: req.user.profile.userProfile
-//         });
-//     }
-//     catch (err) {
-//         console.error(err);
-//     } 
-// }
 
 // destroys the current user session
 // redirect

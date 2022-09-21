@@ -22,7 +22,8 @@
        <!-- <div class="parent-container flex raisin-black-bg hunter-green-border-radius drop-shadow" id="dashboard-container"> -->
            <div class="parent-container flex creme-bg border-radius drop-shadow" id="user-container">
                 <h1 class="welcome">
-                    Welcome, <span id="userName">[user]</span>!
+                    <!-- using EJS with the two symbols -->
+                    Welcome, <span id="userName"><%= userProfileName %></span>!
                 </h1>
                 <hr>
                     <div class="parent-container flex flex-direction-row drop-shadow filter-none" id="partner-info-container">

@@ -225,6 +225,13 @@ users =
 // React? React native?
     // Managing state (https://www.youtube.com/watch?v=2DV-bONIPqQ)
 
+// partner 1 sends partner 2 a Connection request via email
+// then the email requests partner 2's profile information
+// checks if partner 2 exists
+
+// partner 1 sends partner 2 a Connection request using a shared code
+// once shared code is entered, the corresponding partner's information floods the intial partner's dashboard
+
 
 // real-time inputs (online status, message status, timezone info)
     // (https://socket.io/)
