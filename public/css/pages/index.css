@@ -48,7 +48,8 @@
     }
 
     .container {
-        width: 97vw;
+        display: flex;
+        width: 100vw;
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -81,11 +82,10 @@
     }
 
     .loginSplash {
-        background-color: var(--hunter-green);
         border: var(--hunter-green);
         border-radius: 0.5rem;
         margin: 5px;
-        width: 100%;
+        width: 90%;
         height: 80%;
         display: flex;
         justify-content: center;
@@ -106,6 +106,7 @@
 
     input {
         padding: 5px;
+        margin: 3%;
         border: 2px solid #294D4A;
         border-radius: 0.5rem;
         background-color:  var(--creme);
@@ -114,18 +115,6 @@
 
     .input-container {
         display: flex;
-        align-self: center;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: var(--creme);
-        border: var(--creme);
-        border-radius: 0.5rem;
-        margin: 5px;
-        width: 90%;
-        height: 90%;
-        display: flex;
-        justify-content: center;
         font-family: "ChampagneBold";
         color: var(--hunter-green);
     }
