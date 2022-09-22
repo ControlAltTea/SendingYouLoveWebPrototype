@@ -1,4 +1,4 @@
-/******************************************
+ /******************************************
 /* CSS
 /*******************************************/
 @font-face {
@@ -16,7 +16,17 @@
 }
 
 :root {
-    --dropShadow: 3px 3px 3px #1e3735; 
+    --creme: #fcfbed;
+    --creme-shadow: hsla(56, 27%, 77%, 0.15);
+    --hunter-green: #23524e;
+    --hunter-green-shadow: hsla(175, 32%, 23%, 0.1);
+    --light-green:#73937E;
+    --light-purple: #A799B7;
+    --dark-purple: #9888A5;
+    --raisin-black: #2E2E3A;
+    --dropShadow: 1px 1px 1px #1a1b1b;
+    --box-shadow: inset 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    --border-radius: 0.25rem;
 }
 
 /* Box Model Hack */
@@ -24,31 +34,89 @@
   box-sizing: border-box;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-  width: 25%;
-}
-
+/*************************/
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #FCFBEC;
-    display: flex;
+    background-color: var(--creme);
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.navbar {
+/* display: flex */
+.flex {
     display: flex;
-    width: 100%;
-    height: 10%;
-    padding: 4px;
-    margin-bottom: 20px;
-    background-color: #294D4A;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.box-shadow {
+    box-shadow:var(--box-shadow);
+}
+
+.border-radius{
+    border-radius: var(--border-radius);
+}
+
+.circle-radius {
+    border-radius: 100%;
+}
+
+.creme-bg {
+    background-color: var(--creme);
+}
+
+.creme-border-radius {
+    border: var(--creme-shadow) 4px solid;
+    border-radius: var(--border-radius);
+}
+
+.light-green-bg {
+    background-color: var(--light-green);
+}
+
+.hunter-green-bg {
+    background-color: var(--hunter-green);
+}
+
+.hunter-green-border-radius {
+    border: var(--hunter-green-shadow) 4px solid;
+    border-radius: var(--border-radius);
+}
+
+.raisin-black-bg {
+    background-color: var(--raisin-black);
+}
+
+.light-purple-bg {
+    background-color: var(--light-purple);
+}
+
+.light-purple-border-radius {
+    border: var(--light-purple) 2px solid;
+    border-radius: 0.25rem;
+}
+
+.dark-purple-bg {
+    background-color: var(--dark-purple);
+}
+
+.dark-purple-border-radius {
+    border: var(--dark-purple) 2px solid;
+    border-radius: 0.25rem;
+}
+
+.drop-shadow {
     filter: drop-shadow(var(--dropShadow));
+}
+
+.filter-none {
+    filter: none;
 }

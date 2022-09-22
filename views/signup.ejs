@@ -6,19 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/pages/baseStyle.css">
     <link rel="stylesheet" href="/css/pages/signup.css">
     <title>Sign Up</title>
 </head>
 <body class="raisin-black-bg">
-    <nav class="navbar flex flex-direction-row" id="indexNav">
-        <a href="/">
-            <h1>Sending You Love</h1>
-        </a>
-        <div class="nav-links flex flex-direction-row">
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-        </div>
-    </nav>
+    <%- include('partials/nav-login') -%>
     <div class="container">
         <div class="parent-container signup-container border-radius box-shadow creme-bg">
             <h1>Create an Account</h1>
