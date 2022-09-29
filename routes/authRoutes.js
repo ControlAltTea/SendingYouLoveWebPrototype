@@ -5,8 +5,6 @@ const router = express.Router();
 // const homeController = require('./controllers/homeController');
 // const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-// const Story = require('../models/Story')
-
 //@desc Login/Landing Page
 //@Route GET /
 // router.get('/', ensureGuest, (req, res) => {

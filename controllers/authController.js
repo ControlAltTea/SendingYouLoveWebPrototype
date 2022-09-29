@@ -169,7 +169,7 @@ exports.postLogin = (req, res, next) => {
 // instatiate objects outside the authController
 // 
 exports.getDashboard = (req, res) => {
-    console.log(`req.profile`, req.user.profile)
+    // console.log(`req.profile`, req.user.profile)
     const userProfileName = req.user.profile.userProfileName;
     try {        
         res.render('dashboard',
