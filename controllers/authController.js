@@ -62,12 +62,9 @@ exports.postSignup = (req, res, next) => {
     // takes the values from the signup form, splits the pronouns up
     // stores them in an array
     const pronounArr = req.body.userPronouns.split("/");
-
     
     // create a new object that we can later reference values from, inside our user object
     let reqBodyUser = {
-        email: req.body.email,
-        password: req.body.password,
         profile: {
             userProfileName: req.body.userProfileName,
             userPronouns: {
