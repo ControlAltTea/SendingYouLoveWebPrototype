@@ -12,57 +12,57 @@
 </head>
 <body class="flex raisin-black-bg">
 <%- include('partials/navs/nav-logout') -%>
-    <div class="container flex">
-       <!-- <div class="parent-container flex raisin-black-bg hunter-green-border-radius drop-shadow" id="dashboard-container"> -->
-           <div class="parent-container flex creme-bg border-radius drop-shadow" id="user-container">
-                <h1 class="welcome">
-                    <!-- using EJS with the two symbols -->
-                    Welcome, <span id="userName"><%= userProfileName %></span>!
-                </h1>
-                <hr>
-                    <div class="parent-container flex flex-direction-row drop-shadow filter-none" id="partner-info-container">
-                        <button class="partner-info-button hunter-green-bg border-radius box-shadow">&lt;</button>
-                        <div class="parent-container flex flex-direction-row light-purple-bg border-radius drop-shadow" id="partner-info">
-                            <div class="partner-profile-picture flex flex-direction-row drop-shadow"><img id="partner-profile-picture-img" src="/images/user_icon.png" alt="">
-                            </div>
-                            <div class="partner-info-text dark-purple-bg border-radius">
-                                <span class="partner-pronouns">
-                                    <%= userPronouns.subjective%>/<%= userPronouns.objective%>/<%= userPronouns.possessive%>
+<div class="container flex">
+    <!-- <div class="parent-container flex raisin-black-bg hunter-green-border-radius drop-shadow" id="dashboard-container"> -->
+        <div class="parent-container flex creme-bg border-radius drop-shadow" id="user-container">
+        <h1 class="welcome">
+        <!-- using EJS with the two symbols -->
+        Welcome, <span id="userName"><%= userProfileName %></span>!
+        </h1>
+        <hr>
+        <div class="parent-container flex flex-direction-row drop-shadow filter-none" id="partner-info-container">
+            <button class="partner-info-button hunter-green-bg border-radius box-shadow">&lt;</button>
+            <div class="parent-container flex flex-direction-row light-purple-bg border-radius drop-shadow" id="partner-info">
+                <div class="partner-profile-picture flex flex-direction-row drop-shadow"><img id="partner-profile-picture-img" src="/images/user_icon.png" alt="">
+                </div>
+                <div class="partner-info-text dark-purple-bg border-radius">
+                    <span class="partner-pronouns">
+                        <%= userPronouns.subjective%>/<%= userPronouns.objective%>/<%= userPronouns.possessive%>
+                    </span>
+                    <hr id="purple-horizontal-line">
+                    <div class="partner-status-container">
+                        <div class="partner-status-text flex">
+                            <span class="current-status">Offline</span>
+                            <span class="status-message">"This is a status message!"</span>
+                            <div class="partner-location-info flex">
+                                <span class="partner-city partner-country partner-timezone">
+                                    MI,USA (0:00AM)
                                 </span>
-                                <hr id="purple-horizontal-line">
-                                <div class="partner-status-container">
-                                    <div class="partner-status-text flex">
-                                        <span class="current-status">Offline</span>
-                                        <span class="status-message">"This is a status message!"</span>
-                                        <div class="partner-location-info flex">
-                                            <span class="partner-city partner-country partner-timezone">
-                                                MI,USA (0:00AM)
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="notifications">
-                                    <img src="" alt="">
-                                </div>
                             </div>
                         </div>
-                        <button class="partner-info-button hunter-green-bg border-radius box-shadow">&gt;</button>
                     </div>
-                    <hr>
-                    <div class="parent-container flex flex-direction-row creme-bg" id="actions-container-outer" >
-                        <button class="partner-info-button hunter-green-bg border-radius box-shadow">&lt;</button>
-                        <div class="parent-container flex hunter-green-bg hunter-green-border-radius drop-shadow" id="actions-container-inner">
-                        <%- include('partials/dashboard/send-hug') -%>
-                        <!-- <%- include('partials/dashboard/hold-hands') -%>
-                        <%- include('partials/dashboard/send-kisses') -%> -->
-                        </div>  
-                        <button class="partner-info-button hunter-green-bg border-radius box-shadow">&gt;</button>
+                    <div class="notifications">
+                        <img src="" alt="">
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
+            <button class="partner-info-button hunter-green-bg border-radius box-shadow">&gt;</button>
         </div>
+        <hr>
+        <div class="parent-container flex flex-direction-row creme-bg" id="actions-container-outer" >
+            <button class="partner-info-button hunter-green-bg border-radius box-shadow">&lt;</button>
+            <div class="parent-container flex hunter-green-bg hunter-green-border-radius drop-shadow" id="actions-container-inner">
+            <%- include('partials/dashboard/send-hug') -%>
+            <%- include('partials/dashboard/hold-hands') -%>
+            <%- include('partials/dashboard/send-hug') -%>
+            </div>  
+            <button class="partner-info-button hunter-green-bg border-radius box-shadow">&gt;</button>
+        </div>
+        </div>
+        <!-- </div> -->
     </div>
-    <script src="/js/dashboard.js"></script>
+</div>
+<script src="/js/dashboard.js"></script>
 </body>
 </html>
 

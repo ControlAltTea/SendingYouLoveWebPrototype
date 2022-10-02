@@ -46,13 +46,15 @@ body {
 }
 
 .navbar {
-    width:104%;
-    height: 10%;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
     padding: 4px;
     margin-bottom: 10px;
     background-color: var( --hunter-green);
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 
@@ -81,7 +83,7 @@ a:hover{
 
 h1 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     font-family: "Champagne";
 }
 
@@ -95,7 +97,6 @@ h1 {
 .container {
     width: 97vw;
     height: 100vh;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     /* padding-top: 30px; */
@@ -110,9 +111,9 @@ h1 {
 
 
 #user-container{
-    align-self: center;
+    /* align-self: center;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     flex-direction: column;
     width: 60%;
     padding: 1%;
@@ -128,7 +129,9 @@ h1 {
 }
 
 .section-container {
+    width: 95%;
     height: 40%;
+    padding: 3%;
 }
 
 hr {
@@ -157,6 +160,8 @@ hr {
     align-items: center;
     padding: 2%;
 }
+
+
 
 .partner-profile-picture,
 .action-profile-picture  {
@@ -195,6 +200,7 @@ img {
 .status-message,
 .partner-location-info {
     font-family: "Champagne";
+    font-size: 1.5rem;
     font-weight: 300;
     color: var(--creme);
     filter: drop-shadow(1px,1px,2px, black);
@@ -229,18 +235,19 @@ img {
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 #actions-container-outer {
     height: 100%;
-    width: 80%;
+    width: 90%;
     flex-direction: row;
 }
 
 .actions-container {
-    height: 90%;
-    width: 110%;
+    height: 83%;
+    width: 90%;
     padding: 1%;
     display: flex;
     flex-direction: column;
@@ -249,11 +256,11 @@ img {
 }
 
 .actions-container span {
-    width: 100%;
+    width: 90%;
     margin: 1%;
     text-align: center;
-    letter-spacing: 0.1rem;
-    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    font-size: 1.5rem;
     font-weight: 600;
     font-family: "Champagne";
     color: var(--creme);
@@ -266,7 +273,8 @@ img {
     padding-right: 10%;
     margin: 2%;
     letter-spacing: 0.2rem;
-    font-size: 0.9rem;
+    
+    font-size: 1.5rem;
     font-weight: 700;
     font-family: "Champagne";
     color: var(--creme);
@@ -285,7 +293,7 @@ img {
     align-items: center;
 }
 .action-profile-picture {
-    width: 50%;
+    width: 40%;
     height: 60%;
 }
 
