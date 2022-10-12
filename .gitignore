@@ -8,5 +8,6 @@ config.env
 *.xcf
 todos
 SendingYouLoveNotes.js
-design_files/frontEndNotes.js
+design_files/frontEndNotes
+design_files/backendNotes
 generalNotes
