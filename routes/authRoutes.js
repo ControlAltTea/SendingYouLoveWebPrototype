@@ -1,37 +1,15 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
+const authController = require("../controllers/authController");
 
-// const authController = require('./controllers/authController'); 
-// const homeController = require('./controllers/homeController');
-// const { ensureAuth, ensureGuest } = require('../middleware/auth')
+router.get("/", authController.getIndex);
+router.get("/dashboard", authController.getDashboard);
 
-//@desc Login/Landing Page
-//@Route GET /
-// router.get('/', ensureGuest, (req, res) => {
-//     try {
-//         res.render('login',
-//             { layout: 'login' }
-//         )
-//     } catch (err) {
-//         console.error(`err`, err)
-//         res.render('error/404')
-//     }
-// })
-exports.getIndex = (req, res) => {
-    console.log(`reached index`);
-    res.render('index',
-        { title: 'Index' }
-    )
-    // try {
-    //     console.log(`reached login`);
-    //     res.render('login',
-    //         { layout: 'login' }
-    //     )
-    // } catch (err) {
-    //     console.log(`BEEP`)
-    //     console.error(err)
-    //     res.render('error/404')
-    // }
-}
+router.get("/signup", authController.getSignup);
+router.post("/signup", authController.postSignup);
+
+router.get("/login", authController.getLogin);
+router.post("/login", authController.postLogin);
+router.get("/logout", authController.logout);
 
 module.exports = router;

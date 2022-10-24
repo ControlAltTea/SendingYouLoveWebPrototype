@@ -3,13 +3,32 @@ const passport = require("passport");
 const validator = require("validator");
 const UserLogin = require("../models/User");
 const UserProfile = require("../models/UserProfile");
-
+const SignUpHelper = require("../test/helpers/signuphelper");
 
 exports.getIndex = (req, res) => {
     try {
         res.render('index', {
             title: 'Index'
         })
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+// instatiate objects outside the authController
+// 
+exports.getDashboard = (req, res) => {
+    // console.log(`req.profile`, req.user.profile)
+    const userProfileName = req.user.profile.userProfileName;
+    console.log(`pronouns`, req.user)
+    const userPronouns = req.user.profile.userPronouns;
+    try {
+        res.render('dashboard',
+            {
+                title: 'dashboard',
+                userProfileName: userProfileName,
+                userPronouns: userPronouns
+            })
     } catch (err) {
         console.error(err)
     }
@@ -58,42 +77,43 @@ exports.postSignup = (req, res, next) => {
     req.body.email = validator.normalizeEmail(req.body.email, {
         gmail_remove_dots: false,
     });
-
-    // takes the values from the signup form, splits the pronouns up
-    // stores them in an array
-    const pronounArr = req.body.userPronouns.split("/");
     
-    // create a new object that we can later reference values from, inside our user object
-    let reqBodyUser = {
-        profile: {
-            userProfileName: req.body.userProfileName,
-            userPronouns: {
-                subjective: "",
-                objective: "",
-                possessive: ""
-            }
-        }
-    };
+    // const user =  SignUpHelper.receivePronouns(req.body);
 
-    // loop through the above object's profile.userPronouns object to dynamically change the values of the keys without refencing them directly
-    // tense = subjective, objective, possessive
-    // i sets the values of ^^^ as the object is looped through
-    Object.keys(reqBodyUser.profile.userPronouns).forEach((tense, i = 0) => {
-        reqBodyUser.profile.userPronouns[tense] = pronounArr[i];
-        i++;
-    })
+    // // takes the values from the signup form, splits the pronouns up
+    // // stores them in an array
+    // const pronounArr = req.body.userPronouns.split("/");
+
+    // // create a new object that we can later reference values from, inside our user object
+    // let reqBodyUser = {
+    //     profile: {
+    //         userProfileName: req.body.userProfileName,
+    //         userPronouns: {
+    //             subjective: "",
+    //             objective: "",
+    //             possessive: ""
+    //         }
+    //     }
+    // };
+
+    // // loop through the above object's profile.userPronouns object to dynamically change the values of the keys without refencing them directly
+    // // tense = subjective, objective, possessive
+    // // i sets the values of ^^^ as the object is looped through
+    // Object.keys(reqBodyUser.profile.userPronouns).forEach((tense, i = 0) => {
+    //     reqBodyUser.profile.userPronouns[tense] = pronounArr[i];
+    //     i++;
+    // })
 
     const user = new UserLogin({
         email: req.body.email,
         password: req.body.password,
         profile: {
-            userProfileName: reqBodyUser.profile.userProfileName,
-            userPronouns: reqBodyUser.profile.userPronouns
+            userProfileName: SignUpHelper.receivePronouns(req.body).userProfileName,
+            userPronouns: SignUpHelper.receivePronouns(req.body).userPronouns
         }
     });
 
     console.log(`user`, user);
-    console.log(`1`)
 
     UserLogin.findOne(
         { email: req.body.email },
@@ -113,8 +133,6 @@ exports.postSignup = (req, res, next) => {
                     return next(err);
                 }
                 req.logIn(user, (err) => {
-                    console.log(`trying to log in`);
-                    console.log(`login User`, user);
                     if (err) {
                         return next(err);
                     }
@@ -137,7 +155,6 @@ exports.postSignup = (req, res, next) => {
 // checkLogin
 exports.getLogin = (req, res) => {
     if (req.user) {
-        console.log(`getLogin user`, req.user);
         return res.redirect("/dashboard");
     }
     res.render("login", {
@@ -183,32 +200,12 @@ exports.postLogin = (req, res, next) => {
             }
 
             req.flash("success", { msg: "Success! You are logged in." });
-            console.log(`User: `, user);
-            console.log(`login successful`);
             res.redirect(req.session.returnTo || "/dashboard");
         });
     })(req, res, next);
 };
 
 
-// instatiate objects outside the authController
-// 
-exports.getDashboard = (req, res) => {
-    // console.log(`req.profile`, req.user.profile)
-    const userProfileName = req.user.profile.userProfileName;
-    console.log(`pronouns`, req.user)
-    const userPronouns = req.user.profile.userPronouns;
-    try {        
-        res.render('dashboard',
-            {
-                title: 'dashboard',
-                userProfileName: userProfileName,
-                userPronouns: userPronouns
-            })
-    } catch (err) {
-        console.error(err)
-    }
-}
 
 // destroys the current user session
 // redirect
@@ -220,7 +217,6 @@ exports.logout = (req, res) => {
     //     }
     // });
     req.logout(() => {
-        console.log(`req.user`, req.user)
         req.user = null;
         res.redirect("/");
     });

@@ -1,6 +1,7 @@
 const connectDB = require('./config/db')
-// const authRoutes = require('./routes/authRoutes')
-const homeRoutes = require('./routes/homeRoutes')
+const authRoutes = require('./routes/authRoutes')
+// const homeRoutes = require('./routes/homeRoutes');
+// const authRoutes = require('./routes/authRoutes');
 
 const express = require("express");
 const app = express();
@@ -42,7 +43,8 @@ app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use('/', homeRoutes);
+app.use('/', authRoutes);
+// app.use('/dashboard', homeRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on ${process.env.PORT}, you better catch it!`)
