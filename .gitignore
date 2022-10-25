@@ -11,3 +11,5 @@ SendingYouLoveNotes.js
 design_files/frontEndNotes
 design_files/backendNotes
 generalNotes
+.eslintrc.json
+.eslintrc.js

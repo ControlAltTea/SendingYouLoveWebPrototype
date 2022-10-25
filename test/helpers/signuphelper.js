@@ -1,4 +1,4 @@
-exports.receivePronouns = function(req, res) {
+exports.receivePronouns = function(req) {
     // takes the values from the signup form, splits the pronouns up
     // stores them in an array
     const pronounArr = req.userPronouns.split("/");
