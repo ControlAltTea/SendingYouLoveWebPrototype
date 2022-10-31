@@ -1,10 +1,4 @@
 # SendingYouLoveWebPrototype
-## TODO: React
-    Refactor current layout in React
-    Create components for the interactin buttons sections
-    Create components for love language sections
-        - Enable the love language sections to toggle using the "tab" (think dividers in a filing cabinet)
-
 ## TODO: /requests
 ### Create "/requests" page
 ### Received
@@ -24,7 +18,11 @@
         - Pending
             - This will simply say Pending with the requested emails underneath
             - even technically "rejected" requests will appear as pending, as to not agitate the sender
-
+## TODO: React
+    Refactor current layout in React
+    Create components for the interactin buttons sections
+    Create components for love language sections
+        - Enable the love language sections to toggle using the "tab" (think dividers in a filing cabinet)
 ## TODO: Index.ejs
 ### create mission statement
     Something along the lines of "Sending You Love" is a "relationship supplement" app. The goal is to promote healthy communication between you and your partner(s).
