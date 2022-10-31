@@ -7,12 +7,17 @@
 
 ## TODO: /requests
 ### Create "/requests" page
-### input field to enter an email
-    - on Submit, check the if the email given can be found in the loginmodels
-        - if not, request a valid email
-        - (EXTRA) prompt user to send an email invite to the requested partner's email
-            - Confirm email has been sent
-            - Email can only be sent once as to avoid users spamming each other
+### Received
+    - If user has received a request, the sender's profile info will appear with an 'Accept' and 'Deny' button displayed
+        - info will include name and pronouns of the sender
+        
+### Sent
+    - input field to enter an email
+        - on Submit, check the if the email given can be found in the loginmodels
+            - if not, request a valid email
+            - (EXTRA) prompt user to send an email invite to the requested partner's email
+                - Confirm email has been sent
+                - Email can only be sent once as to avoid users spamming each other
         - Accepted
             - Accepted partners are stored in a Partners model (an array), and depending on the state of the slide, each partner's information will populate the
             partner's info section
