@@ -27,7 +27,7 @@
     TODO: Create components for the interactin buttons sections
     TODO: Create components for love language sections
         - Enable the love language sections to toggle using the "tab" (think dividers in a filing cabinet)
-
+------------------
 ## Index.ejs
 ### Create mission statement
     Something along the lines of "Sending You Love" is a "relationship supplement" app. The goal is to promote healthy communication between you and your partner(s).
@@ -47,7 +47,6 @@
     COMPLETE: if user profile has already been created, do not prompt to create profile, redirect to /dashboard with appropriately populated user info ("Welcome,
     user!")
 
-------------------
 ## COMPLETE: dashboard.ejs
     COMPLETE: create partner profile section mockup
     COMPLETE: create love languages mockup section
