@@ -9,26 +9,19 @@ COMPLETE: authentication
     - POST signup (user info goes to database >> login checks for user info)
     - GET signup (redirects to login>> if user is present, redirect to dashboard >> if user is not present, redirect to signup with flash message)
 
-COMPLETE: Login.ejs
-    - style the login.ejs
+------------------
+## COMPLETE: dashboard.ejs
+    COMPLETE: create partner profile section mockup
+    COMPLETE: create love languages mockup section
+    COMPLETE: create welcome message that recognizes user's profile
 
-COMPLETE: signup.ejs
+## COMPLETE: authentication
+    COMPLETE: test creating a new user
+    COMPLETE: check that sign up stores username, email, and password (password encrypted)
+    COMPLETE: POST signup (user info goes to database >> login checks for user info)
+    COMPLETE: GET signup (redirects to login>> if user is present, redirect to dashboard >> if user is not present, redirect to signup with flash message)
 
-TODO: Index.ejs
-    - COMPLETE: create landing page gif
-    - create mission statement
-    - COMPLETE: create splash for login and register (at the end of gif)
-        - Animate splash to ease it and out
-        - Eliminate redirect to /login and simply have "/" play a splash when the login button is pressed
-        - splash includes login form and a "/signup" redirect
+## COMPLETE: Login.ejs
+    COMPLETE: style the login.ejs
 
-TODO: user profile
-    - in PS, create user profile mockup
-    - if user profile has not yet been created, prompt user to create profile, redirect to /create_profile
-    - if user profile has already been created, do not prompt to create profile, redirect to /dashboard with appropriately populated user info ("Welcome, user!")
-    - separate login model from user profile model
-
-TODO: dashboard.ejs
-    - create welcome message that recognizes user's profile
-    - create partner profile section mockup
-    - create love languages mockup section
+## COMPLETE: signup.ejs
