@@ -1,8 +1,3 @@
-const express = require('express')
-const passport = require("passport");
-const validator = require("validator");
-const UserLogin = require("../models/User");
-
 exports.getIndex = (req, res) => {
     try {
         res.render('index', {

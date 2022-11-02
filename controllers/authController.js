@@ -1,8 +1,6 @@
-const express = require('express')
 const passport = require("passport");
 const validator = require("validator");
 const UserLogin = require("../models/User");
-const UserProfile = require("../models/UserProfile");
 const SignUpHelper = require("../test/helpers/signuphelper");
 
 exports.getIndex = (req, res) => {
@@ -204,8 +202,6 @@ exports.postLogin = (req, res, next) => {
         });
     })(req, res, next);
 };
-
-
 
 // destroys the current user session
 // redirect

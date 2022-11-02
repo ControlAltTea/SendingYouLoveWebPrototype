@@ -1,4 +1,8 @@
 # SendingYouLoveWebPrototype
+
+## NPM
+`npm install` for package.json
+
 COMPLETE: authentication
     - test creating a new user
     - check that sign up stores username, email, and password (password encrypted)
