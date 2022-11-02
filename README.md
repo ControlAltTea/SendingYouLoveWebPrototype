@@ -3,7 +3,6 @@
 ## NPM
 `npm install` for package.json
 ------------------
-# SendingYouLoveWebPrototype
 ## Create "/requests" page
 ### Received section
     TODO: If user has received a request, the sender's profile info will appear with an 'Accept' and 'Deny' button displayed
